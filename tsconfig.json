@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "jsx": "react",
         "target": "ES2022",
         "module": "ESNext",
         "moduleResolution": "Node",
@@ -18,5 +19,5 @@
         "typeRoots": ["node_modules/@types", "src/typings"]
     },
     "exclude": ["node_modules", "node_modules/**/**.d.ts"],
-    "include": ["src/**/**.ts", "src/**/**.json", "eslint.config.js"],
+    "include": ["src/**/**.ts", "src/**/**.json", "eslint.config.js", "src/index.tsx"],
 }
