@@ -11,7 +11,7 @@ export const Switch = ({ children, fallback }: SwitchConditionOptions) => {
         if (React.isValidElement(match) && typeof match === "object" && "props" in match && match.props && "when" in match.props && typeof match.props.when === "boolean" && match.props.when) {
             return (
                 <>
-                    match
+                    {match}
                 </>
             );
         }
