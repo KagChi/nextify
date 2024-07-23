@@ -1,7 +1,7 @@
 {
   "name": "@kagchi/nextify",
   "version": "1.0.0",
-  "description": "A Utilities components for NextJS",
+  "description": "A Utilities components for ReactJS",
   "main": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -4,7 +4,7 @@
 
 # @kagchi/nextify
 
-**A Utilities components for NextJS**
+**A Utilities components for ReactJS**
 
 [![GitHub](https://img.shields.io/github/license/KagChi/nextify)](https://github.com/KagChi/nextify/blob/main/LICENSE)
 [![Discord](https://discordapp.com/api/guilds/785715968608567297/embed.png)](https://kagchi.my.id)
