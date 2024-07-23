@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "@kagchi/nextify",
   "version": "1.0.0",
-  "description": "A TypeScript template project.",
+  "description": "A Utilities components for NextJS",
   "main": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
