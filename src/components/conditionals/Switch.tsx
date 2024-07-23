@@ -1,5 +1,5 @@
 import React from "react";
-import { PartialBy, BaseConditionOptions } from "../../types";
+import { PartialBy, BaseConditionOptions } from "../../typings";
 
 export interface SwitchConditionOptions extends PartialBy<BaseConditionOptions, "fallback"> {
     children: React.ReactNode;

@@ -5,4 +5,4 @@ export * from "./components/conditionals";
 export * from "./components/lists";
 
 // Typings
-export * from "./types";
+export * from "./typings";
