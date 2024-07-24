@@ -3,7 +3,7 @@ import * as esbuild from "esbuild";
 await esbuild.build({
     entryPoints: ["src/index.tsx"], // Entry point of your React app
     bundle: true,                   // Bundle all dependencies into the output file
-    outfile: "dist/bundle.js",      // Output file
+    outfile: "dist/index.js",      // Output file
     minify: true,                   // Minify the output
     sourcemap: true,                // Generate source maps
     loader: {                       // Loaders for handling different file types
