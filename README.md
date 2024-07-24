@@ -80,3 +80,7 @@ import { For } from "@kagchi/nextify"
   }
 </For>
 ```
+
+### References
+- [SolidJS Conditional Rendering](https://docs.solidjs.com/concepts/control-flow/conditional-rendering)
+- [SolidJS List Rendering](https://docs.solidjs.com/concepts/control-flow/list-rendering)
