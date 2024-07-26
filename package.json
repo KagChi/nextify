@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",
     "@hazmi35/eslint-config": "^13.3.1",
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
