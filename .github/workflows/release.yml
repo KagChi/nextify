@@ -31,7 +31,7 @@ jobs:
       - name: Compile source
         run: pnpm run build 
     
-      - uses: JS-DevTools/npm-publish@v3
+      - uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c # v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
           provenance: true
