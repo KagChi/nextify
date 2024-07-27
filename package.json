@@ -1,6 +1,6 @@
 {
   "name": "@kagchi/nextify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Utilities components for ReactJS",
   "main": "dist",
   "scripts": {
