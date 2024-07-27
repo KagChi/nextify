@@ -1,0 +1,28 @@
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4 # v2.4.0
+        with:
+          version: latest
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        with:
+          node-version-file: .node-version
+      - name: Installing dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Compile source
+        run: pnpm run build
+      - name: Publish source
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=NODE_AUTH_TOKEN && npm publish --access public --no-git-checks || true
+        env:
+          NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}'
