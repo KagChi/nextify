@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kagchi/nextify"
+    "url": "git+https://github.com/kagchi/nextify.git"
   },
   "files": [
     "dist/**",
