@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kagchi/nextify.git"
+    "url": "https://github.com/KagChi/nextify"
   },
   "publishConfig": {
     "access": "public"
