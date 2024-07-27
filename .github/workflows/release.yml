@@ -6,6 +6,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
@@ -23,6 +26,9 @@ jobs:
         run: pnpm run build
       - name: Publish source
         run: |
-          npm config set //registry.npmjs.org/:_authToken=NODE_AUTH_TOKEN && npm publish --access public --no-git-checks || true
+          npm config set //registry.npmjs.org/:_authToken=YOUR_NODE_AUTH_TOKEN && \
+          npm config set @kagchi:registry=https://registry.npmjs.org && \
+
+          npm publish --provenance --access public --no-git-checks || true
         env:
           NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}'
