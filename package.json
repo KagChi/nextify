@@ -18,6 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/kagchi/nextify.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist/**",
     "LICENSE",

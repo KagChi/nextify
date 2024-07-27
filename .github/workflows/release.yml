@@ -1,3 +1,5 @@
+name: Release
+
 on:
   release:
     types:
@@ -9,6 +11,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
@@ -16,24 +19,19 @@ jobs:
         uses: pnpm/action-setup@v4 # v2.4.0
         with:
           version: latest
+
       - name: Setup Node.js
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version-file: .node-version
+
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
-      - name: Compile source
-        run: pnpm run build
-      
-      - name: Configure npm with authentication token
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
-          npm config set @kagchi:registry=https://registry.npmjs.org
-        env:
-          NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}'
 
-      - name: Publish source
-        run: |
-          npm publish --provenance --access public --no-git-checks || true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Compile source
+        run: pnpm run build 
+    
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NODE_AUTH_TOKEN }}
+          provenance: true
