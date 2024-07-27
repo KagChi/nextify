@@ -2,18 +2,28 @@
   "name": "@kagchi/nextify",
   "version": "1.0.0",
   "description": "A Utilities components for ReactJS",
-  "main": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "build": "rimraf dist && tsc && node build"
+    "build": "rimraf dist && tsup"
   },
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.js"
-  },
+	"exports": {
+		"import": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/esm/index.js"
+		},
+		"require": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+  "main": "dist/index.js",
+	"module": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"sideEffects": [
+		"./dist/index.js"
+	],
   "repository": {
     "type": "git",
     "url": "https://github.com/KagChi/nextify"
@@ -48,9 +58,12 @@
     "@typescript-eslint/parser": "^7.17.0",
     "esbuild": "^0.23.0",
     "eslint": "^8.57.0",
-    "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
   }
 }
