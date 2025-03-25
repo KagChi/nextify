@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4 # v2.4.0
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
         with:
           version: latest
 
@@ -31,7 +31,7 @@ jobs:
       - name: Compile source
         run: pnpm run build 
     
-      - uses: JS-DevTools/npm-publish@v3
+      - uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c # v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
           provenance: true
